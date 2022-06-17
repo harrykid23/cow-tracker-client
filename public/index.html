@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Cow Tracker Simulator</title>
+  </head>
+  <body
+    class="overflow-hidden w-screen min-h-screen bg-cover flex p-5 justify-center"
+    style="background-image: url('assets/bg-01.jpg')"
+  >
+    <div
+      class="rounded-lg bg-white min-h-full w-11/12 sm:w-4/5 lg:w-2/5 p-7 flex flex-col items-center gap-3 text-center"
+    >
+      <h1 class="text-3xl font-bold mb-5">Cow Tracker Simulator</h1>
+      <h1 class="text-md md:text-lg">
+        Monitor your cows location via Geofence Node Red App
+      </h1>
+      <form
+        id="form-1"
+        class="w-full flex flex-col items-center gap-3 text-center"
+      >
+        <input
+          class="w-4/5 text-center shadow appearance-none border-2 rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          placeholder="Enter Cow ID"
+          type="text"
+          id="input-name"
+          required
+        />
+        <div
+          id="warning-tracked"
+          class="hidden flex-col sm:flex-row gap-2 w-full items-center justify-center"
+        >
+          <div
+            class="flex items-center px-3 font-bold rounded-full bg-yellow-600 text-white aspect-square"
+          >
+            !
+          </div>
+          <div class="text-yellow-600">Your location data is being tracked</div>
+        </div>
+        <!-- pr -->
+        <div
+          id="warning-gps"
+          class="hidden flex-col sm:flex-row gap-2 w-full items-center justify-center"
+        >
+          <div
+            class="flex text-xs items-center px-3 font-bold rounded-full bg-red-600 text-white aspect-square"
+          >
+            ✕
+          </div>
+          <div class="text-red-600">Check your GPS setting or retry</div>
+        </div>
+
+        <div class="flex gap-4 justify-center items-center w-full">
+          <button
+            id="btn-on"
+            type="submit"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:bg-gray-500"
+          >
+            ON
+          </button>
+          <button
+            id="btn-off"
+            type="button"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:bg-gray-500"
+            disabled
+          >
+            OFF
+          </button>
+        </div>
+      </form>
+      <div class="text-md md:text-lg">Current Location</div>
+      <div class="w-full flex flex-col gap-2 items-center">
+        <div id="text-lat">Latitude: 0</div>
+        <div id="text-lon">Longitude: 0</div>
+      </div>
+      <div class="w-1/2 grid grid-cols-3 gap-2">
+        <div></div>
+        <button
+          id="btn-up"
+          class="button-arrow aspect-square flex items-center justify-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:bg-gray-500"
+        >
+          <i class="fa-solid fa-arrow-up"></i>
+        </button>
+        <div></div>
+        <button
+          id="btn-left"
+          class="button-arrow aspect-square flex items-center justify-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:bg-gray-500"
+        >
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <button
+          id="btn-down"
+          class="button-arrow aspect-square flex items-center justify-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:bg-gray-500"
+        >
+          <i class="fa-solid fa-arrow-down"></i>
+        </button>
+        <button
+          id="btn-right"
+          class="button-arrow aspect-square flex items-center justify-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:bg-gray-500"
+        >
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+    <script src="assets/script.js"></script>
+  </body>
+</html>
