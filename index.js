@@ -4,8 +4,7 @@ const app = express();
 var Mqtt = require("azure-iot-device-mqtt").Mqtt;
 var DeviceClient = require("azure-iot-device").Client;
 var Message = require("azure-iot-device").Message;
-const connectionString =
-  "HostName=sbm-mqtt.azure-devices.net;DeviceId=harry;SharedAccessKey=EmfRx3Sg12VHhr9xheaHMPoSbD/UHqk7vvzcnGcVzts=";
+const connectionString = process.env.CONNECTION_STRING;
 var client = DeviceClient.fromConnectionString(connectionString, Mqtt);
 
 app.use(bodyParser.json());
